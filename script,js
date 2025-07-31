@@ -1,0 +1,172 @@
+// Preloader
+document.addEventListener("DOMContentLoaded", () => {
+  const preloader = document.getElementById('preloader');
+  setTimeout(() => preloader.classList.add('hide'), 900);
+  setTimeout(() => preloader.style.display = "none", 1250);
+});
+
+// Typing effect
+const typingTarget = document.querySelector('.typing-effect');
+const typingText = "Ashutosh Kumar";
+let i = 0;
+function typeWriter() {
+  if (i < typingText.length) {
+    typingTarget.textContent += typingText.charAt(i);
+    i++;
+    setTimeout(typeWriter, 80);
+  }
+}
+typeWriter();
+
+// Sidebar active link highlight on scroll
+const sidebarLinks = document.querySelectorAll('.sidebar-link');
+const sections = Array.from(document.querySelectorAll('main > section'));
+window.addEventListener('scroll', () => {
+  let current = "";
+  const scrollY = window.scrollY + 60;
+  sections.forEach(section => {
+    const secTop = section.offsetTop;
+    if (scrollY >= secTop) current = section.id;
+  });
+  sidebarLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+  });
+});
+// Smooth scroll for sidebar links
+sidebarLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href').replace('#', '');
+    const targetSection = document.getElementById(targetId); 
+    if (targetSection) {
+      e.preventDefault();
+      window.scrollTo({ top: targetSection.offsetTop - 18, behavior: 'smooth' });
+    }
+  });
+});
+// Sidebar toggle for mobile
+const sidebar = document.querySelector('.sidebar');
+const sidebarToggle = document.getElementById('sidebar-toggle');
+if (sidebarToggle) {
+  sidebarToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+  });
+}
+
+// Animate project categories on scroll
+const projectCategories = document.querySelectorAll('.project-category');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+projectCategories.forEach(cat => observer.observe(cat));
+
+// Animated Progress Bars
+function animateProgressBars() {
+  document.querySelectorAll('.progress-bar .fill').forEach(bar => {
+    setTimeout(() => {
+      bar.style.width = bar.parentElement.parentElement.dataset.skill === 'SQL' ? "90%" :
+                        bar.parentElement.parentElement.dataset.skill === 'Python' ? "95%" :
+                        bar.parentElement.parentElement.dataset.skill === 'ML' ? "80%" : "75%";
+    }, 300);
+  });
+}
+window.addEventListener('DOMContentLoaded', animateProgressBars);
+
+// Animated Counters
+document.querySelectorAll('.counter').forEach(counterDiv => {
+  let updated = false;
+  const countTo = +counterDiv.getAttribute('data-count');
+  const span = counterDiv.querySelector('span');
+  function animateCounter() {
+    let val = 0;
+    if (updated) return;
+    updated = true;
+    const increment = countTo > 30 ? Math.ceil(countTo/30) : 1;
+    function update() {
+      val += increment;
+      if (val > countTo) val = countTo;
+      span.textContent = val;
+      if (val < countTo) requestAnimationFrame(update);
+    }
+    update();
+  }
+  const observer = new IntersectionObserver(
+    entries => entries[0].isIntersecting && animateCounter(),
+    { threshold: 0.4 }
+  );
+  observer.observe(counterDiv);
+});
+
+// Project Cards Modal & Flip
+document.querySelectorAll('.project-details-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const modalId = btn.closest('.project-card').getAttribute('data-modal');
+    document.getElementById(modalId).classList.add('active');
+  });
+});
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('keypress', e => {
+    if (e.key === 'Enter') {
+      let flip = card.querySelector('.flip-card-inner');
+      if (flip) flip.style.transform = "rotateY(180deg)";
+    }
+  });
+});
+document.querySelectorAll('.modal .close').forEach(span => {
+  span.addEventListener('click', () => {
+    span.closest('.modal').classList.remove('active');
+  });
+});
+window.addEventListener('click', (e) => {
+  document.querySelectorAll('.modal.active').forEach(modal => {
+    if (e.target === modal) modal.classList.remove('active');
+  });
+});
+
+// Parallax background effect on mousemove (on project cards)
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `translateY(-8px) rotateY(${x*8}deg) rotateX(${-y*8}deg) scale(1.04)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = "";
+  });
+});
+
+// Testimonial slider
+let currentTestimonial = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+function showTestimonial(idx) {
+  testimonials.forEach((testi, i) => {
+    testi.classList.toggle('active', i === idx);
+  });
+}
+document.getElementById('nextTestimonial').addEventListener('click', ()=>{
+  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+  showTestimonial(currentTestimonial);
+});
+document.getElementById('prevTestimonial').addEventListener('click', ()=>{
+  currentTestimonial = (currentTestimonial + testimonials.length - 1) % testimonials.length;
+  showTestimonial(currentTestimonial);
+});
+
+// Contact Form (placeholder, not actually sending)
+document.getElementById('contact-form').addEventListener('submit', e => {
+  e.preventDefault();
+  alert("Thanks for contacting! (Email not sent in demo)");
+  e.target.reset();
+});
+
+// Theme toggle
+document.getElementById('theme-toggle').addEventListener('click', ()=>{
+  document.body.classList.toggle('light-mode');
+});
+
+console.log("Ashutosh's portfolio loaded.");
