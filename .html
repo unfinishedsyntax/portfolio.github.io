@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ashutosh Portfolio</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+  <aside class="sidebar">
+    <div class="profile-logo">
+      <svg viewBox="0 0 100 100">
+        <circle class="svg-circle" cx="50" cy="50" r="45"/>
+        <text x="50%" y="50%" text-anchor="middle" fill="#00ffff" dy="0.35em" font-size="32">A</text>
+      </svg>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about" class="sidebar-link active">About</a></li>
+        <li><a href="#projects" class="sidebar-link">Projects</a></li>
+        <li><a href="#experience" class="sidebar-link">Experience</a></li>
+        <li><a href="#testimonials" class="sidebar-link">Testimonials</a></li>
+        <li><a href="#contact" class="sidebar-link">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="sidebar-toggle" id="sidebar-toggle">&#9776;</button>
+  </aside>
+  <div class="content">
+    <header>
+      <h1 class="typing-effect" style="margin-bottom:0.2em;"></h1>
+      <div style="color:#fff; font-size:1.1rem; margin-bottom:0.1em;">
+        mailtooashu321@gmail.com
+      </div>
+      <div style="color:#fff; font-size:1.1rem;">
+        9798159870
+      </div>
+    </header>
+    <main>
+      <!-- About Section -->
+      <section id="about">
+        <h2>About</h2>
+        <p>Welcome to my portfolio !  Hi, I'm Ashutosh Kumar, a graduate of Maulana Abul Kalam Azad University of Technology in B.Tech with a passion for data analytics and business intelligence. In my course, I learned to solve problems and became interested in analytics, which I continued to develop through projects, self-learning, and certificates. I've been working on many projects, such as stock price prediction using LSTM, financial sector data analysis, and building a Revenue Analysis Chatbot using RAG and Hugging Face LLM. Besides, I served as a Data Scientist intern at Bajaj Finance, where I dealt with real-world financial datasets and used such advanced AI tools as Gemini LLM and FAISS to perform revenue analysis. Though I don't have a full-time job experience, I still can offer a new point of view, a strong work ethic, and a fast adaptability, whether it's learning new tools, working in teams, or meeting deadlines. I am now looking for such a post where I could apply my skills, solve real-world challenges, and contribute to business success while still growing professionally.</p>
+        <div class="skills">
+          <h3>Skills</h3>
+          <div class="progress-bar" data-skill="SQL"><span>SQL</span>
+            <div class="bar"><div class="fill" style="width:90%"></div></div>
+          </div>
+          <div class="progress-bar" data-skill="Python"><span>Python</span>
+            <div class="bar"><div class="fill" style="width:85%"></div></div>
+          </div>
+          <div class="progress-bar" data-skill="ML"><span>ML</span>
+            <div class="bar"><div class="fill" style="width:80%"></div></div>
+          </div>
+          <div class="progress-bar" data-skill="Power BI"><span>Power BI</span>
+            <div class="bar"><div class="fill" style="width:75%"></div></div>
+          </div>
+        </div>
+        <button id="download-resume">Download Resume</button>
+        <div class="counters">
+          <div class="counter" data-count="10">Projects: <span>0</span></div>
+          <div class="counter" data-count="3">Years Experience: <span>0</span></div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-cards">
+          <!-- Walmart Sales Dashboard -->
+          <div class="project-card flip-card" data-modal="walmart1">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="assets\Walmart_dashboard.jpg" alt="Walmart Dashboard Project" />
+                <h3>Walmart Sales Dashboard</h3>
+                <p>Dark-themed Streamlit dashboard for visualizing Walmart sales insights.</p>
+              </div>
+              <div class="flip-card-back">
+                <h4>Highlights:</h4>
+                <ul>
+                  <li>Revenue, rating, and transaction metrics</li>
+                  <li>Interactive category breakdown</li>
+                  <li>Hourly heatmaps, payment distribution</li>
+                  <li>Responsive - ready for Streamlit Spaces</li>
+                </ul>
+                <button class="project-details-btn">Details</button>
+                <div style="margin-top:1em;">
+                  <a href="https://github.com/unfinishedsyntax/Walmart_DashBoard" target="_blank" style="color:#00ffff;font-weight:bold;text-decoration:none;margin-right:12px; font-size:1.13em;">&#x1F5C3;</a>
+                  <a href="https://walmartdashboard-2japp9drghs2frzy2yxfcjj.streamlit.app/" target="_blank" style="color:#ff00cc;font-weight:bold;text-decoration:none; font-size:1.13em;">&#x1F517;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Stock Price Prediction using LSTM -->
+          <div class="project-card flip-card" data-modal="stock1">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="assets\stock_price_prediction.jpg" alt="Stock Price Prediction" />
+                <h3>Stock Price Prediction</h3>
+                <p>LSTM neural networks for market forecasting and analysis.</p>
+              </div>
+              <div class="flip-card-back">
+                <h4>Highlights:</h4>
+                <ul>
+                  <li>Deep learning with LSTM & Keras</li>
+                  <li>Evaluation with MSE, RMSE, MAE</li>
+                  <li>Insights & visualizations for financial trends</li>
+                </ul>
+                <button class="project-details-btn">Details</button>
+                <div style="margin-top:1em;">
+                  <a href="https://github.com/unfinishedsyntax/Stock-Price-Prediction" target="_blank" style="color:#00ffff;font-weight:bold;text-decoration:none;font-size:1.13em;">&#x1F5C3;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Analysis on Indian States -->
+          <div class="project-card flip-card" data-modal="indiastates1">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="assets\Indian_states.jpg" alt="Analysis on Indian States" />
+                <h3>Indian States Data Analysis</h3>
+                <p>Sector-wise analytics using Indian government datasets.</p>
+              </div>
+              <div class="flip-card-back">
+                <h4>Highlights:</h4>
+                <ul>
+                  <li>Analysis across CDR, GVA, and more sectors</li>
+                  <li>Exploratory data analysis on Indian states</li>
+                  <li>Plans for sector dependency modeling using ML</li>
+                </ul>
+                <button class="project-details-btn">Details</button>
+                <div style="margin-top:1em;">
+                  <a href="https://github.com/unfinishedsyntax/Analysis_on_Indian_states" target="_blank" style="color:#00ffff;font-weight:bold;text-decoration:none;font-size:1.13em;">&#x1F5C3;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Marketing Campaign Performance AI -->
+          <div class="project-card flip-card" data-modal="marketing1">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="assets\Market_AI.jpg" alt="Marketing Campaign Performance AI" />
+                <h3>Marketing Campaign AI Analysis</h3>
+                <p>AI-powered system for marketing campaign insights and optimization.</p>
+              </div>
+              <div class="flip-card-back">
+                <h4>Highlights:</h4>
+                <ul>
+                  <li>Retrieval-Augmented Generation (RAG)</li>
+                  <li>Google Gemini for NLP-driven insights</li>
+                  <li>Key metrics: revenue, CTR, leads</li>
+                  <li>Automated summary reports</li>
+                </ul>
+                <button class="project-details-btn">Details</button>
+                <div style="margin-top:1em;">
+                  <a href="https://github.com/unfinishedsyntax/Marketing-Campaign-Performance-Analysis-using-AI" target="_blank" style="color:#00ffff;font-weight:bold;text-decoration:none;font-size:1.13em;">&#x1F5C3;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Algorithm-Analyser -->
+          <div class="project-card flip-card" data-modal="algorithms1">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="assets\Algorithm_Analyser.jpg" alt="Algorithm Analyser" />
+                <h3>Algorithm Analyser</h3>
+                <p>Performance benchmarking for classic sorting algorithms.</p>
+              </div>
+              <div class="flip-card-back">
+                <h4>Highlights:</h4>
+                <ul>
+                  <li>Bubble, Quick, Merge, Insertion, Selection Sort</li>
+                  <li>Random array generator and precise time measurement</li>
+                  <li>Interactive benchmarking and result visualizations</li>
+                </ul>
+                <button class="project-details-btn">Details</button>
+                <div style="margin-top:1em;">
+                  <a href="https://github.com/unfinishedsyntax/Algorithm-Analyser" target="_blank" style="color:#00ffff;font-weight:bold;text-decoration:none;font-size:1.13em;">&#x1F5C3;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Spotify Advanced SQL -->
+          <div class="project-card flip-card" data-modal="spotify1">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="assets\Spotify.jpg" alt="Spotify Advanced SQL Project" />
+                <h3>Spotify Data SQL Analysis</h3>
+                <p>Advanced SQL queries, performance optimization, and insights on music data.</p>
+              </div>
+              <div class="flip-card-back">
+                <h4>Highlights:</h4>
+                <ul>
+                  <li>Data normalization & schema design</li>
+                  <li>Window functions and indexing</li>
+                  <li>Performance boosts through query tuning</li>
+                  <li>Power BI/Tableau visualization Ready</li>
+                </ul>
+                <button class="project-details-btn">Details</button>
+                <div style="margin-top:1em;">
+                  <a href="https://github.com/unfinishedsyntax/Spotify-Data-Analysis-using-SQL" target="_blank" style="color:#00ffff;font-weight:bold;text-decoration:none;font-size:1.13em;">&#x1F5C3;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Project Modals -->
+        <div class="modal" id="walmart1">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Walmart Sales Dashboard</h3>
+            <p>
+              A dark-themed Streamlit dashboard providing rich sales insights for Walmart. Features include revenue, rating and transaction metrics, interactive category breakdown, hourly heatmaps, payment method distribution, and a responsive design—deployable on Hugging Face Spaces.<br><br>
+              <b>Tech stack:</b> Streamlit, Python, Data Visualization.
+            </p>
+            <div style="margin-top:1em;">
+              <a href="https://github.com/unfinishedsyntax/Walmart_DashBoard" target="_blank" style="color:#00ffff;font-weight:bold;text-decoration:none;margin-right:18px;">&#x1F5C3; View on GitHub</a>
+              <a href="" target="_blank" style="color:#ff00cc;font-weight:bold;text-decoration:none;">&#x1F517; Live Demo</a>
+            </div>
+          </div>
+        </div>
+        <div class="modal" id="stock1">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Stock Market Price Prediction</h3>
+            <p>
+              Leveraged LSTM neural networks to learn from historical stock data for trend forecasting. Features rigorous preprocessing, model training with TensorFlow/Keras, hyperparameter tuning, regularization, and comprehensive performance visualization.<br>
+              <b>Metrics:</b> MSE, RMSE, MAE. <br>
+              <b>Tools:</b> TensorFlow, Python, Pandas.
+            </p>
+            <div style="margin-top:1em;">
+              <a href="https://github.com/unfinishedsyntax/Stock-Price-Prediction" target="_blank" style="color:#00ffff;font-weight:bold;text-decoration:none;">&#x1F5C3; View on GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="modal" id="indiastates1">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Analysis on Indian States</h3>
+            <p>
+              Analyzes multiple Indian government datasets (CDR, GVA, and others) with sector-wise breakdowns across all Indian states. Uses publicly posted records from NDAP and government portals. Plans for machine learning to establish cross-sector dependencies.<br><br>
+              <b>Tech:</b> Python, Pandas, Data Visualization.
+            </p>
+            <div style="margin-top:1em;">
+              <a href="https://github.com/unfinishedsyntax/Analysis_on_Indian_states" target="_blank" style="color:#00ffff;font-weight:bold;text-decoration:none;">&#x1F5C3; View on GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="modal" id="marketing1">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>AI Marketing Campaign Analysis</h3>
+            <p>
+              An AI-powered analytics platform: Builds RAG workflows with Google Gemini, Sentence Transformers, and FAISS for campaign querying and insight generation. Features KPI reporting: revenue, CTR%, conversion, channel performance, lead generation, underperforming/overperforming campaigns, temporal analysis, and actionable recommendations.<br><br>
+              <b>Stack:</b> Python, Google Gemini AI, FAISS, Pandas.
+            </p>
+            <div style="margin-top:1em;">
+              <a href="https://github.com/unfinishedsyntax/Marketing-Campaign-Performance-Analysis-using-AI" target="_blank" style="color:#00ffff;font-weight:bold;text-decoration:none;">&#x1F5C3; View on GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="modal" id="algorithms1">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Algorithm Analyser</h3>
+            <p>
+              Implementation and benchmarking of classic sorting algorithms — bubble, selection, insertion, merge, quick sort. Features randomized data generation and <code>&lt;chrono&gt;</code>-based timing, with console output of performance comparisons.<br>
+              <b>Language:</b> C++
+            </p>
+            <div style="margin-top:1em;">
+              <a href="https://github.com/unfinishedsyntax/Algorithm-Analyser" target="_blank" style="color:#00ffff;font-weight:bold;text-decoration:none;">&#x1F5C3; View on GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="modal" id="spotify1">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Spotify Advanced SQL</h3>
+            <p>
+              SQL-based analysis using data normalization, advanced queries, and performance optimization (indexing, EXPLAIN plans). Includes music engagement analytics (streams, views, comments), with visualizations and BI tool readiness.<br>
+              <b>Tech:</b> PostgreSQL, SQL, Power BI.
+            </p>
+            <div style="margin-top:1em;">
+              <a href="https://github.com/unfinishedsyntax/Spotify_DB" target="_blank" style="color:#00ffff;font-weight:bold;text-decoration:none;">&#x1F5C3; View on GitHub</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      
+      <!-- Experience Section -->
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Data Analyst at JIMSH</h3>
+              <span>2024-2025</span>
+              <p>Worked on analytics and reporting.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Intern at Bajaj Finserv</h3>
+              <span>Feb2025- Apr2025</span>
+              <p>Assisted in data research and visualization.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonials Slider -->
+      <section id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial-slider">
+          <div class="testimonial active">
+            <p>"Ashutosh is a fantastic analyst!"</p>
+            <span>- Manager, XYZ Corp</span>
+          </div>
+          <div class="testimonial">
+            <p>"Great work on our dashboard project."</p>
+            <span>- Team Lead, ABC Analytics</span>
+          </div>
+        </div>
+        <div class="testimonial-controls">
+          <button id="prevTestimonial">⟨</button>
+          <button id="nextTestimonial">⟩</button>
+        </div>
+      </section>
+      <!-- Contact Form Section -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <form id="contact-form" autocomplete="off">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <p>Email: mailtooashu321@gmail.com</p>
+        <p>Location: Khagaria, Bihar</p>
+      </section>
+    </main>
+    <footer>
+      &copy; 2025 Ashutosh. All rights reserved.
+      <button id="theme-toggle">Toggle Dark/Light Mode</button>
+    </footer>
+  </div>
+  <script src="assets/script.js"></script>
+  <script>
+    // Ensure your typing effect animates your name, not the old title
+    const typingTarget = document.querySelector('.typing-effect');
+    const typingText = "Ashutosh Kumar";
+    let i = 0;
+    function typeWriter() {
+      if (i < typingText.length) {
+        typingTarget.textContent += typingText.charAt(i);
+        i++;
+        setTimeout(typeWriter, 80);
+      }
+    }
+    typeWriter();
+  </script>
+</body>
+</html>
